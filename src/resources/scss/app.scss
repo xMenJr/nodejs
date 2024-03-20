@@ -1,0 +1,104 @@
+@import '_variables';
+@import 'main';
+@import 'util';
+// @import 'material-design-iconic-font.min';
+@import 'demo';
+@import 'theme';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans" sans-serif;
+    height: 100%;
+}
+
+h2 {
+    color: $yellow-color;
+}
+
+h3 {
+    color: $blue-color;
+}
+
+.search {
+    width: 400px;
+}
+
+.wrap-filter ul li a , .wrap-filter a {
+    text-decoration: none;
+}
+
+.block2 a {
+    text-decoration: none;
+}
+
+.blog a {
+    text-decoration: none;
+}
+
+.topbar-mobile {
+    padding-left: 0;
+}
+
+.menu-mobile a {
+    text-decoration: none;
+}
+
+ul.main-menu-m li a.active {
+    color: #6c7ae0;
+}
+
+header {
+    display: block;
+}
+
+.app {
+    height: 100%;
+}
+
+.layout-page {
+    background-color: #f5f5f9;
+}
+
+.content-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.table-light, .table-light th, .table-light td{
+    border: 1px solid #d9dee3;
+    border-radius: 0.375rem;
+    padding: 10px;
+}
+
+.table-light {
+    margin-bottom: 15px;
+}
+.table-light td input {
+    width: 70px;
+}
+
+.text-center::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.plus-detail-data, .minus-detail-data,
+.plus-size-shirt, .minus-size-shirt,
+.plus-size-pant, .minus-size-pant,
+.plus-size-shoe, .minus-size-shoe {
+    border: 1px solid #d9dee3;
+    padding: 5px;
+}
+
+.shopping button {
+    min-width: 146px;
+}
+
+.data-table, .size-shirt-table, .size-pant-table, .size-shoe-table {
+    display: none;
+}
+
+.size-table .table-light td {
+    width: 50px;
+}

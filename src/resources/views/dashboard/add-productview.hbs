@@ -1,0 +1,417 @@
+<form method="POST" action="/dashboard/addproduct">
+  <h1 style="text-align: center">Thêm sản phẩm</h1>
+
+  <div class="mb-3">
+    <label for="productname" class="form-label">Product Name</label>
+    <input type="text" class="form-control" id="productname" name="ProductName">
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input type="text" class="form-control" id="description" name="Description">
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" id="price" name="Price">
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    {{!-- <input type="text" class="form-control" id="category" name="Category"> --}}
+    <select class="form-control" id="category" name="Category">
+      <option value="" hidden style="display: none" >Loại sản phẩm</option>
+      <option value="1">Áo</option>
+      <option value="2">Quần</option>
+      <option value="3">Giày</option>
+      <option value="4">Đồng hồ</option>
+      <option value="5">Thắt lưng</option>
+    </select>
+  </div>
+
+  {{!-- Bảng size --}}
+  <div class="data-table">
+    <label for="detail-data" class="form-label">Detail Data</label>
+    <div class="d-flex">
+      <div class="table-data">
+        <table class="table-light">
+          <tbody>
+            <tr class="size-detail-data">
+              <td>Size</td>
+                <td>
+                  <input class="text-center" name="Size[]" type="text" placeholder="Enter Size">
+                </td>
+            </tr>
+            <tr class="color">
+              <td>Color</td>
+                <td>
+                  <input class="text-center" name="Color[]" type="text" placeholder="Enter Color">
+                </td>
+            </tr>
+            <tr class="quantity">
+              <td>Quantity</td>
+                <td>
+                  <input class="text-center" name="Quantity[]" type="text" placeholder="Enter Quantity">
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-quantity">
+        <div class="d-flex">
+          <button type="button" class="plus-detail-data">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+          </svg>
+          </button>
+          <button type="button" class="minus-detail-data">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+              <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Bảng size áo --}}
+  <div class="size-shirt-table">
+    <label for="size-data" class="form-label">Size Table</label>
+    <div class="d-flex">
+      <div class="table-size-shirt">
+        <table class="table-light">
+          <tbody>
+            <tr class="size-shirt">
+              <td>Size</td>
+                <td>
+                  <input class="text-center" name="SizeShirt[]" type="text" placeholder="Enter Size">
+                </td>
+            </tr>
+            <tr class="shoulder">
+              <td>Shoulder (cm)</td>
+                <td>
+                  <input class="text-center" name="Shoulder[]" type="text" placeholder="Enter Shoulder">
+                </td>
+            </tr>
+            <tr class="shirt-length">
+              <td>Shirt Length (cm)</td>
+                <td>
+                  <input class="text-center" name="ShirtLength[]" type="text" placeholder="Enter Shirt Length">
+                </td>
+            </tr>
+            <tr class="chest-circumference">
+              <td>Chest Circumference (cm)</td>
+                <td>
+                  <input class="text-center" name="ChestCircumference[]" type="text" placeholder="Enter Chest Circumference">
+                </td>
+            </tr>
+            <tr class="sleeve-length">
+              <td>Sleeve Length (cm)</td>
+                <td>
+                  <input class="text-center" name="SleeveLength[]" type="text" placeholder="Enter Sleeve Length">
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-quantity">
+        <div class="d-flex">
+          <button type="button" class="plus-size-shirt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+          </svg>
+          </button>
+          <button type="button" class="minus-size-shirt">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+              <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Bảng size quần --}}
+  <div class="size-pant-table">
+    <label for="size-data" class="form-label">Size Table</label>
+    <div class="d-flex">
+      <div class="table-size-pant">
+        <table class="table-light">
+          <tbody>
+            <tr class="size-pant">
+              <td>Size</td>
+                <td>
+                  <input class="text-center" name="SizePant[]" type="text" placeholder="Enter Size">
+                </td>
+            </tr>
+            <tr class="pants-length">
+              <td>Pants Length (cm)</td>
+                <td>
+                  <input class="text-center" name="PantsLength[]" type="text" placeholder="Enter Pants Length">
+                </td>
+            </tr>
+            <tr class="pants-waist">
+              <td>Pants-Waist (cm)</td>
+                <td>
+                  <input class="text-center" name="PantsWaist[]" type="text" placeholder="Enter Pants Waist">
+                </td>
+            </tr>
+            <tr class="thigh-width">
+              <td>Thigh Width (cm)</td>
+                <td>
+                  <input class="text-center" name="ThighWidth[]" type="text" placeholder="Enter Thigh Width">
+                </td>
+            </tr>
+            <tr class="pant-leg-width">
+              <td>Pant Leg Width (cm)</td>
+                <td>
+                  <input class="text-center" name="PantLegWidth[]" type="text" placeholder="Enter Pant Leg Width">
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-quantity">
+        <div class="d-flex">
+          <button type="button" class="plus-size-pant">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+          </svg>
+          </button>
+          <button type="button" class="minus-size-pant">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+              <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="weight" class="form-label">Weight (kg)</label>
+    <input type="text" class="form-control" id="weight" name="Weight">
+  </div>
+
+  <div class="mb-3">
+    <label for="material" class="form-label">Material</label>
+    <input type="text" class="form-control" id="material" name="Material">
+  </div>
+
+  <div class="mb-3">
+    <label for="productdetail" class="form-label">Product Detail</label>
+    <input type="text" class="form-control" id="productdetail" name="ProductDetail">
+  </div>
+
+  <div class="mb-3">
+    <label for="imgproduct" class="form-label">ImgProduct</label>
+    <input type="text" class="form-control" id="imgProduct" name="ImgProduct">
+  </div>
+  {{!-- <button type="submit" class="btn btn-primary mb-5 float-end">Thêm</button> --}}
+  <div style="text-align: right;">
+    <button type="submit" class="btn btn-primary mb-5">Thêm</button>
+  </div>
+</form>
+
+<script>
+  $(document).ready(() => {
+    // Xử lí data-detail
+    //Lấy button +
+    $('.plus-detail-data').click(() => {
+      // Thêm size
+      $('.table-light tbody tr.size-detail-data').append(
+        `td>Size</td>
+          <td>
+            <input class="text-center" name="Size" type="text" placeholder="Enter Size">
+          </td>`
+       );
+      // Thêm color
+       $('.table-light tbody tr.color').append(
+        `td>Color</td>
+          <td>
+            <input class="text-center" name="Color" type="text" placeholder="Enter Color">
+          </td>`
+       );
+      // Thêm quantity
+       $('.table-light tbody tr.quantity').append(
+        `td>Quantity</td>
+          <td>
+            <input class="text-center" name="Quantity" type="text" placeholder="Enter Quantity">
+          </td>`
+       );
+    });
+    // Lấy button -
+    $('.minus-detail-data').click(() => {
+      // Lấy độ dài từng cột, nếu bé hơn 2 cột (bao gồm cột size và 1 cột bảng cho sẵn) thì k đc xóa
+      const size = $('.table-light tbody tr.size-detail-data td').length;
+      const color = $('.table-light tbody tr.color td').length;
+      const quantity = $('.table-light tbody tr.quantity td').length;
+      if(size > 2 && color > 2 && quantity > 2) {
+        // Xóa size cuối
+        $('.table-light tbody tr.size-detail-data td:last-child').remove();
+        // Xóa color cuối
+        $('.table-light tbody tr.color td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.quantity td:last-child').remove();
+      }
+      else {
+        alert("Cannot remove more columns");
+      }
+    });
+
+    $('#category').change(() => {
+      // Lấy giá trị được chọn trong dropdown
+      const selectedCategory = $('#category').val();
+
+      // Kiểm tra giá trị và hiển thị/ẩn phần tử tương ứng
+      if (selectedCategory === '1') {
+        $('.data-table').show()  // Hiện thị để nhập size, color, quantity
+        $('.size-shirt-table').show();  // Hiển thị để nhập thông số size
+        $('.size-pant-table').hide();
+      } 
+      else if(selectedCategory === '2') {
+        $('.data-table').show() // Hiện thị để nhập size, color, quantity
+        $('.size-pant-table').show();  /// Hiển thị để nhập thông số size
+        $('.size-shirt-table').hide();
+      }
+      else if (selectedCategory === '3') {
+        $('.data-table').show()
+        $('.size-shirt-table').hide();
+        $('.size-pant-table').hide();
+      }
+      else {
+        // Ẩn khi chọn các giá trị khác
+        $('.data-table').hide();
+        $('.size-shirt-table').hide();
+        $('.size-pant-table').hide();
+      }
+    });
+
+    // Xử lí size-shirt
+      $('.plus-size-shirt').click(() => {
+    // Thêm size
+      $('.table-light tbody tr.size-shirt').append(
+      `td>Size</td>
+        <td>
+          <input class="text-center" name="SizeShirt" type="text" placeholder="Enter Size">
+        </td>`
+      );
+    // Thêm shoulder
+      $('.table-light tbody tr.shoulder').append(
+      `td>Size</td>
+        <td>
+          <input class="text-center" name="Shoulder" type="text" placeholder="Enter Shoulder">
+        </td>`
+      );
+    // Thêm shirt_length
+      $('.table-light tbody tr.shirt-length').append(
+      `td>Shirt Length</td>
+        <td>
+          <input class="text-center" name="ShirtLength" type="text" placeholder="Enter Shirt Length">
+        </td>`
+      );
+    // Thêm chest-circumference
+      $('.table-light tbody tr.chest-circumference').append(
+      `td>ChestCircumference</td>
+        <td>
+          <input class="text-center" name="ChestCircumference" type="text" placeholder="Enter ChestCircumference">
+        </td>`
+      );
+    // Thêm sleeve-length
+      $('.table-light tbody tr.sleeve-length').append(
+      `td>Sleeve Length</td>
+        <td>
+          <input class="text-center" name="SleeveLength" type="text" placeholder="Enter Sleeve Length">
+        </td>`
+      );
+    });
+    // Lấy button -
+    $('.minus-size-shirt').click(() => {
+      // Lấy độ dài từng cột, nếu bé hơn 2 cột (bao gồm cột size và 1 cột bảng cho sẵn) thì k đc xóa
+      const size = $('.table-light tbody tr.size-shirt td').length;
+      const shoulder = $('.table-light tbody tr.shoulder td').length;
+      const shirt_length = $('.table-light tbody tr.shirt-length td').length;
+      const chest_circumference = $('.table-light tbody tr.chest-circumference td').length;
+      const sleeve_length = $('.table-light tbody tr.sleeve-length td').length;
+      if(size > 2 && shoulder > 2 && shirt_length > 2 && chest_circumference > 2 && sleeve_length > 2) {
+        // Xóa size cuối
+        $('.table-light tbody tr.size-shirt td:last-child').remove();
+        // Xóa color cuối
+        $('.table-light tbody tr.shoulder td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.shirt-length td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.chest-circumference td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.sleeve-length td:last-child').remove();
+      }
+      else {
+        alert("Cannot remove more columns");
+      }
+    });
+
+    // Xử lí size-pant
+      $('.plus-size-pant').click(() => {
+    // Thêm size
+      $('.table-light tbody tr.size-pant').append(
+      `td>Size</td>
+        <td>
+          <input class="text-center" name="SizePant" type="text" placeholder="Enter Size">
+        </td>`
+      );
+    // Thêm pants-length
+      $('.table-light tbody tr.pants-length').append(
+      `td>Pants Length</td>
+        <td>
+          <input class="text-center" name="PantsLength" type="text" placeholder="Enter Pants Length">
+        </td>`
+      );
+    // Thêm pants-waist
+      $('.table-light tbody tr.pants-waist').append(
+      `td>Pants-Waist</td>
+        <td>
+          <input class="text-center" name="PantsWaist" type="text" placeholder="Enter Pants Waist">
+        </td>`
+      );
+    // Thêm thigh-width
+      $('.table-light tbody tr.thigh-width').append(
+      `td>Thigh Width</td>
+        <td>
+          <input class="text-center" name="ThighWidth" type="text" placeholder="Enter Thigh Width">
+        </td>`
+      );
+    // Thêm pant-leg-width
+      $('.table-light tbody tr.pant-leg-width').append(
+      `td>PantLegWidth</td>
+        <td>
+          <input class="text-center" name="PantLegWidth" type="text" placeholder="Enter Pant Leg Width">
+        </td>`
+      );
+    });
+    // Lấy button -
+    $('.minus-size-pant').click(() => {
+      // Lấy độ dài từng cột, nếu bé hơn 2 cột (bao gồm cột size và 1 cột bảng cho sẵn) thì k đc xóa
+      const size = $('.table-light tbody tr.size-pant td').length;
+      const pants_length = $('.table-light tbody tr.pants-length td').length;
+      const pants_waist = $('.table-light tbody tr.pants-waist td').length;
+      const thigh_width = $('.table-light tbody tr.thigh-width td').length;
+      const pant_leg_width = $('.table-light tbody tr.pant-leg-width td').length;
+      if(size > 2 && pants_length > 2 && pants_waist > 2 && thigh_width > 2 && pant_leg_width > 2) {
+        // Xóa size cuối
+        $('.table-light tbody tr.size-pant td:last-child').remove();
+        // Xóa color cuối
+        $('.table-light tbody tr.pants-length td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.pants-waist td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.thigh-width td:last-child').remove();
+        // Xóa quantity cuối
+        $('.table-light tbody tr.pant-leg-width td:last-child').remove();
+      }
+      else {
+        alert("Cannot remove more columns");
+      }
+    });
+
+  })
+</script>

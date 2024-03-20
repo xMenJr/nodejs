@@ -1,0 +1,63 @@
+<form id="registerForm" method="POST" action="/auth/register">
+    <h1 style="text-align: center;">Đăng ký</h1>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">DOB</label>
+        <input type="date" class="form-control" id="dob" name="dob">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" id="password" name="password">
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" name="address">
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone">
+    </div>
+    {{!-- <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <input type="text" class="form-control" id="role" name="role">
+    </div> --}}
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="md-5 offset-5" href="login">Login</a>
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var errorMessage = document.getElementById("flashError").textContent;
+        var successMessage = document.getElementById("flashSuccess").textContent;
+        console.log(errorMessage, successMessage);
+        // Thêm sự kiện nghe vào form
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của việc submit form
+
+            // Mã hiện tại của bạn để xử lý thành công
+            if (errorMessage) {
+                alert("Error: " + errorMessage);
+            } else if (successMessage) {
+                alert("Success: " + successMessage);
+            }
+            // Submit form thủ công
+            this.submit();
+        });
+    });
+</script>   
