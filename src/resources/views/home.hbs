@@ -664,6 +664,8 @@
                     });
                     $('.js-select2.color').html(optionsColor);
 
+                    $('.slick3.gallery-lb').slick('removeSlide', null, null, true);
+
                     const dataImg = data.imgProduct.Img
                     let listImg = '';
                     dataImg.forEach(img =>
@@ -680,10 +682,6 @@
 
                     $('.slick3.gallery-lb').prepend(listImg);
                     $('.slick3.gallery-lb').slick('refresh');
-
-                    // Khởi tạo lại Slick carousel với các cài đặt và trạng thái đã lưu trữ
-                    {{!-- console.log($('.col-md-6.col-lg-7.p-b-30').html()) --}}
-
 
                     // Hiển thị modal1
                     $('.js-modal1').attr('data-id', productId).addClass('show-modal1');
